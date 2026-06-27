@@ -3,6 +3,11 @@ import { View, StyleSheet, TextInput, Pressable, ActivityIndicator, useColorSche
 import { ThemedText } from './themed-text';
 import { Colors, Spacing } from '@/constants/theme';
 
+// Base URL of the backend API. Set EXPO_PUBLIC_API_URL in the deployment
+// environment (e.g. Railway) to point at the deployed backend; falls back to
+// localhost for local development.
+const API_URL = process.env.EXPO_PUBLIC_API_URL ?? 'http://localhost:8080';
+
 interface InquiryFormProps {
   selectedProduct?: string;
   onSuccess?: () => void;
@@ -65,7 +70,7 @@ export function InquiryForm({ selectedProduct, onSuccess }: InquiryFormProps) {
   useEffect(() => {
     const fetchCatalog = async () => {
       try {
-        const response = await fetch('http://localhost:8080/api/catalog');
+        const response = await fetch(`${API_URL}/api/catalog`);
         if (response.ok) {
           const data = await response.json();
           if (data.products) setProducts(data.products);
@@ -95,7 +100,7 @@ export function InquiryForm({ selectedProduct, onSuccess }: InquiryFormProps) {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8080/api/inquiries', {
+      const response = await fetch(`${API_URL}/api/inquiries`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,8 +8,7 @@ import { BrandsCarousel } from '@/components/BrandsCarousel';
 import { InquiryForm } from '@/components/InquiryForm';
 import { Footer } from '@/components/Footer';
 import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Colors, Spacing } from '@/constants/theme';
+import { Colors, Spacing } from '../constants/theme';
 
 export default function HomeScreen() {
   const scheme = useColorScheme();
@@ -26,7 +25,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <ThemedView style={styles.container}>
+    <View style={styles.container}>
       <Header />
 
       <ScrollView
@@ -161,19 +160,17 @@ export default function HomeScreen() {
 
         {/* Footer */}
         {/* onNavPress={scrollToSection} */}
-        <Footer  />
+        <Footer />
       </ScrollView>
-    </ThemedView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F3F8FF',
   },
   scrollContent: {
-    flexGrow: 1,
     paddingBottom: Spacing.six,
   },
   innerContainer: {

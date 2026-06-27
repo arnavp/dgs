@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Pressable, useWindowDimensions, Linking, useColorScheme } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, type Href } from 'expo-router';
 import { ThemedText } from './themed-text';
 import { Colors, Spacing } from '@/constants/theme';
 
@@ -16,7 +16,7 @@ export function Footer({ onNavPress }: FooterProps) {
 
   const isDesktop = width >= 768;
 
-  const handleLinkPress = (href: string, section?: string) => {
+  const handleLinkPress = (href: Href, section?: string) => {
     if (href === '/' && onNavPress) {
       onNavPress(section ?? 'home');
       return;
@@ -27,9 +27,9 @@ export function Footer({ onNavPress }: FooterProps) {
 
   const handleLegalLinkPress = (type: 'terms' | 'privacy') => {
     if (type === 'terms') {
-      router.push('/terms-and-conditions');
+      router.push('/terms-and-conditions' as Href);
     } else {
-      router.push('/privacy-policy');
+      router.push('/privacy-policy' as Href);
     }
   };
 
