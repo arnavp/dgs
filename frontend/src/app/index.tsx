@@ -163,14 +163,6 @@ export default function HomeScreen() {
         <Footer />
       </ScrollView>
     </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  scrollContent: {
     paddingBottom: Spacing.six,
   },
   innerContainer: {
