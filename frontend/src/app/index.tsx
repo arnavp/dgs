@@ -163,7 +163,16 @@ export default function HomeScreen() {
         <Footer />
       </ScrollView>
     </View>
-    paddingBottom: Spacing.six,
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    maxWidth: 1200,
+    width: '100%',
+    alignSelf: 'center',
+    paddingHorizontal: Spacing.five,
+    marginVertical: Spacing.four,
   },
   innerContainer: {
     maxWidth: 1200,
@@ -284,5 +293,8 @@ export default function HomeScreen() {
   bulletList: {
     marginTop: Spacing.three,
     gap: Spacing.one,
+  },
+  scrollContent: {
+    paddingBottom: Spacing.six,
   },
 });

@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Pressable, useWindowDimensions, Linking, useColorScheme } from 'react-native';
 import { useRouter, type Href } from 'expo-router';
 import { ThemedText } from './themed-text';
-import { Colors, Spacing } from '@/constants/theme';
+import { Colors, Spacing } from '../constants/theme';
 
 interface FooterProps {
   onNavPress?: (section: string) => void;

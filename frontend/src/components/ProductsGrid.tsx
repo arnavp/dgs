@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Pressable, useWindowDimensions, useColorScheme } from 'react-native';
 import { ThemedText } from './themed-text';
-import { Colors, Spacing } from '@/constants/theme';
+import { Colors, Spacing } from '../constants/theme';
 
 interface ProductsGridProps {
   onProductSelect?: (productName: string) => void;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, TextInput, Pressable, ActivityIndicator, useColorScheme, FlatList, Modal } from 'react-native';
 import { ThemedText } from './themed-text';
-import { Colors, Spacing } from '@/constants/theme';
+import { Colors, Spacing } from '../constants/theme';
 
 // Base URL of the backend API. Set EXPO_PUBLIC_API_URL in the deployment
 // environment (e.g. Railway) to point at the deployed backend; falls back to
@@ -12,7 +12,7 @@ interface InquiryFormProps {
   selectedProduct?: string;
   onSuccess?: () => void;
 }
-
+//confident-gratitude-production-26ed.up.railway.app
 const STATIC_PRODUCTS = [
   "Milk", "Curd", "Paneer", "Ghee", "Butter",
   "Cheese", "Srikhand", "UHT Milk", "Mawa",
